@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/colors.css">
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/fonts.css">
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/style.css">
+		<script src="script.js"></script>
 		<title>Wetterstation Schönborn</title>
 	</head>
 
@@ -24,6 +25,15 @@
 				
 				<div class="content">
 					<h2>Wetter Aktuell</h2>
+
+					<div id="load_current">
+						<div class="loading"></div>
+						<span> Wetterdaten werden geladen...</span>
+					</div>
+					<div id="weather_warnings_load">
+						<div class="loading"></div>
+						<span> Wetterwarnungen werden geladen...</span>
+					</div>
 				</div>
 				
 				<div class="content content_container bg_image" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
@@ -160,7 +170,7 @@
 				</div>
 			
 				<div class="content">
-					<button onclick="getWeatherCurrent(); officalWeatherWarnings(); weatherWarnings(); disable_popup = false;"><span class="icon_s">&#x21bb</span>  Aktualisieren</button>
+					<button onclick="getWeather(); getWeatherWarnings(); disable_popup = false;"><span class="icon_s">&#x21bb</span>  Aktualisieren</button>
 				</div>
 			</section>
 		</main>
