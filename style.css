@@ -1,0 +1,51 @@
+@font-face {
+	font-family: main;
+	src: url(https://rammer.org/cdn/fonts/segoeui.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: main;
+	src: url(https://rammer.org/cdn/fonts/seguisb.ttf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: main;
+	src: url(https://rammer.org/cdn/fonts/segoeuii.ttf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: main;
+	src: url(https://rammer.org/cdn/fonts/seguisbi.ttf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: icon_solid;
+	src: url(https://rammer.org/cdn/fonts/fa-solid-900.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: icon_regular;
+	src: url(https://rammer.org/cdn/fonts/fa-light-300.ttf);
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: icon_regular;
+	src: url(https://rammer.org/cdn/fonts/fa-regular-400.ttf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: icon_brand;
+	src: url(https://rammer.org/cdn/fonts/fa-brands-400.ttf);
+	font-weight: bold;
+}

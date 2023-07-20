@@ -1,3 +1,10 @@
+async function getDataText(url) {
+	const response = await fetch(url);
+	const data = await response.text();
+
+	return data;
+}
+
 function switchMeasurements() {
 	let div_measurements = document.querySelector('[name=measurement]');
 	let button_measurements = document.querySelector('[name=measurementButton]');
