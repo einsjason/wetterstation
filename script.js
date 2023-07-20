@@ -81,7 +81,7 @@ async function getWeatherWarnings() {
 	const dom = document.getElementById("warnings");
 	dom.innerHTML = "";
 
-	let data = await getDataText("https://rammer.org/_api/files/file.php?file=%2FTestdaten%2Fweatherwarnings.json");//getDataText("https://rammer.org/api/weather/weatherwarnings.json");
+	let data = await getDataText("https://rammer.org/api/weather/weatherwarnings.json");
 
 	try {
 		data = JSON.parse(data);
