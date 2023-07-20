@@ -5,4 +5,4 @@ Das ist meine Wetterstation in Schönborn bei Dresden.
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
-![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)
+[![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://paypal.me/einsjason)
