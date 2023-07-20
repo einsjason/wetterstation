@@ -1,4 +1,4 @@
-document.onload = function() {
+window.onload = function() {
 	getWeather();
 	getWeatherWarnings();
 }
