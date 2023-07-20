@@ -26,9 +26,9 @@ async function getWeather() {
 	}
    
 	if (parseFloat(data['data']['wind_gust']) >= 60) {
-		document.querySelector("#current .content_container.bg_image").style.background = "url(https://rammer.org/cdn/images/weather/backgrounds/weather/-overlay-wind.png), url(https://rammer.org/cdn/images/weather/backgrounds/weather/" + data['data']['weather_icon'] + ".jpg)";
+		document.querySelector(".content_container.bg_image").style.background = "url(https://rammer.org/cdn/images/weather/backgrounds/weather/-overlay-wind.png), url(https://rammer.org/cdn/images/weather/backgrounds/weather/" + data['data']['weather_icon'] + ".jpg)";
 	} else {
-		document.querySelector("#current .content_container.bg_image").style.background = "url(https://rammer.org/cdn/images/weather/backgrounds/weather/" + data['data']['weather_icon'] + ".jpg)";
+		document.querySelector(".content_container.bg_image").style.background = "url(https://rammer.org/cdn/images/weather/backgrounds/weather/" + data['data']['weather_icon'] + ".jpg)";
 	}
 
 	Array.from(document.querySelectorAll("#current .content_container.bg_image .container, .content_container.bg_image a.button, .content_container.bg_image button")).forEach(e => {
