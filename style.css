@@ -49,3 +49,39 @@
 	src: url(https://rammer.org/cdn/fonts/fa-brands-400.ttf);
 	font-weight: bold;
 }
+
+:root {
+	--color0: #ffffff;
+	--img_monocolor0: saturate(0) brightness(100);
+
+	--accent: #2161a6;
+	--accent_transparent: #2161a671;
+	--color: #000000;
+	--color_invert: #ffffff;
+
+	--bg: #fcfcfc;
+	--header_bg: #ffffff;
+	--footer_bg: #506377;
+
+	--accent_bg: #ffffff;/*#f0f0f0;*/
+
+	--header_border: #42424230;
+	--shadow: #00000030;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--accent_color: #a6a6a6;
+		--color: #ffffff;
+		--color_invert: #000000;
+
+		--bg: #0d0d0d;
+		--header_bg: #0b0b0b;
+		--footer_bg: #14191f;
+
+		--accent_bg: #0b0b0b; /*#141414;*/
+
+		--header_border: #42424230;
+		--shadow: #1a1a1a30;
+	}
+}
