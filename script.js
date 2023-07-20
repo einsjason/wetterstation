@@ -1,6 +1,3 @@
-getWeather();
-getWeatherWarnings();
-
 function switchMeasurements() {
 	let div_measurements = document.querySelector('#current [name=measurement]');
 	let button_measurements = document.querySelector('#current [name=measurementButton]');
