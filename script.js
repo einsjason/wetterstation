@@ -1,6 +1,6 @@
 function switchMeasurements() {
-	let div_measurements = document.querySelector('#current [name=measurement]');
-	let button_measurements = document.querySelector('#current [name=measurementButton]');
+	let div_measurements = document.querySelector('[name=measurement]');
+	let button_measurements = document.querySelector('[name=measurementButton]');
 
 	if (div_measurements.style.maxHeight == "0px") {
 		div_measurements.style.maxHeight = "2000px";
