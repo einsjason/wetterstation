@@ -1,7 +1,5 @@
-window.onload = function() {
-	getWeather();
-	getWeatherWarnings();
-}
+getWeather();
+getWeatherWarnings();
 
 function switchMeasurements() {
 	let div_measurements = document.querySelector('#current [name=measurement]');
