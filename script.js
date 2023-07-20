@@ -82,7 +82,7 @@ async function getWeatherWarnings() {
 	}
 
 	data.warnings.forEach(e => {
-		let result = "<div class='bg_image container' style='width: 100%; background: url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + e.icon + ".jpg'>";
+		let result = "<div class='bg_image container' style='width: calc(100% - 70px); background: url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + e.icon + ".jpg'>";
 		result += "<table id='head'><tr>";
 		result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
 		result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "</td>";
