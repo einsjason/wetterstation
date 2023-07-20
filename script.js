@@ -70,11 +70,11 @@ async function getWeather() {
 	document.getElementById("current_measurements_cloud").innerHTML = parseFloat(data.data.cloud).toFixed(0) + " %";
 	document.getElementById("current_measurements_brightness").innerHTML = parseFloat(data.data.brightness).toFixed(0) + " lux";
 
-	document.getElementById("sunrise").innerHTML = new Date(data.astro.sunrise).toLocaleTimeString("de-DE", {
+	document.getElementById("current_sunrise").innerHTML = new Date(data.astro.sunrise).toLocaleTimeString("de-DE", {
 		hour: "2-digit",
 		minute: "2-digit"
 	});
-	document.getElementById("sunset").innerHTML = new Date(data.astro.sunset).toLocaleTimeString("de-DE", {
+	document.getElementById("current_sunset").innerHTML = new Date(data.astro.sunset).toLocaleTimeString("de-DE", {
 		hour: "2-digit",
 		minute: "2-digit"
 	});
