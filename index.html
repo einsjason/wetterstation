@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/colors.css">
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/fonts.css">
 		<link rel="stylesheet" type="text/css" href="https://rammer.org/_style/style.css">
+		<link rel="stylesheet" type="text/css" href="/cdn/images/weather/backgrounds/weather/background-colors.css">
 		<script src="script.js"></script>
 		<title>Wetterstation Schönborn</title>
 	</head>
@@ -37,6 +38,8 @@
 				</div>
 				
 				<div class="content content_container bg_image" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
+					<div id="warnings"></div>
+					
 					<div style="margin-left: 20px;">
 						<span><span class="icon_r">&#xf017</span> vor <span id="minutes_current"></span> min</span><br>
 			
@@ -162,7 +165,6 @@
 										<span class="icon_r x-large icon_fixwidth">&#xe28f</span>
 									</td>
 									<td>Helligkeit:<br><span id="current_measurements_brightness" class="large"></span><br><span style="color: transparent;">-</span></td>
-									<!--<td>Solarstrahlung:<br><span id="current_measurements_solar" class="large"></span><br>Helligkeit: <span id="current_measurements_brightness"></span></td>-->
 								</tr>
 							</table>
 						</div>

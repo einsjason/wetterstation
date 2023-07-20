@@ -18,7 +18,6 @@ function switchMeasurements() {
 
 async function getWeather() {
 	document.getElementById("load_current").style.display = "";
-	document.getElementById("warnings_current").innerHTML = "";
 
 	let data = await getDataText("https://rammer.org/api/weather/weatherdata.json");
 
@@ -67,6 +66,28 @@ async function getWeather() {
 
 async function getWeatherWarnings() {
 	document.getElementById("weather_warnings_load").style.display = "";
+
+	const dom = document.getElementById("warnings");
+	dom.innerHTML = "";
+
+	let data = await getDataText("https://rammer.org/api/weather/weatherwarnings.json");
+
+	try {
+		data = JSON.parse(data);
+	} catch {
+		document.getElementById("weather_warnings_load").style.display = "none";
+		return;
+	}
+
+	data.warnings.forEach(e => {
+		let result = "<div class='bg_image container style='width: 100%; background: url(/cdn/images/weather/backgrounds/warnings/" + e.icon + ".jpg'>";
+		result += "<table id='head'><tr>";
+		result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
+		result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "</td>";
+		result += "</tr></table>";
+
+		dom.innerHTML += result;
+	});
 
 	document.getElementById("weather_warnings_load").style.display = "none";
 }
