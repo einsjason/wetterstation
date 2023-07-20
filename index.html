@@ -13,7 +13,7 @@
 
 	<body>
 		<header>
-			<a href="/wetter" title="Startseite"><img src="images/logo.svg" height="35px"></a>
+			<a href="" title="Startseite"><img src="images/logo.svg" height="35px"></a>
 		</header>
 		
 		<main>
@@ -21,8 +21,169 @@
 				<div class="content">
 					<h1>Wetterstation Schönborn</h1>
 				</div>
+				
+				<div class="content">
+					<h2>Wetter Aktuell</h2>
+				</div>
+				
+				<div class="content content_container bg_image" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
+					<div style="margin-left: 20px;">
+						<span><span class="icon_r">&#xf017</span> vor <span id="minutes_current"></span> min</span><br>
+			
+						<span id="current_temp" class="x-large"></span> Gefühlte <span id="current_felt_temp"></span><br>
+						<span id="current_description" class="large2"></span>
+						<span id="current_wind_dir_icon" class="icon_s large icon_fixwidth">&#xf124</span> <span id="current_wind_description"></span></span>
+					</div>
+			
+					<br>
+					<a class="button_transparent" name="measurementButton" onclick="switchMeasurementsCurrent()"><span class="icon_s">&#xf107</span> Messwerte anzeigen</a>
+					<style>
+						.content .container {
+							width: 290px;
+							backdrop-filter: blur(5px);
+						}
+					</style>
+			
+					<div name="measurement" style="max-height: 0px; overflow: hidden; transition: all 1s;">
+						<br>
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xf2c9</span>
+									</td>
+									<td>Lufttemperatur:<br><span id="current_measurements_temp" class="large"></span><br>Min/Max: <span id="current_measurements_temp_min_max"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+									<span class="icon_r x-large icon_fixwidth">&#xf750</span>
+									</td>
+									<td>Rel. Luftfeuchte:<br><span id="current_measurements_humidity" class="large"></span><br>Abs. Luftfeuchte: <span id="current_measurements_absolute_humidity"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+									<span class="icon_r x-large icon_fixwidth">&#xf748</span>
+									</td>
+									<td>Taupunkt:<br><span id="current_measurements_dew_point" class="large"></span><br><span style="color: transparent;">-</span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+									<span class="icon_r x-large icon_fixwidth">&#xf62a</span>
+									</td>
+									<td>Stationsluftdruck:<br><span id="current_measurements_pressure" class="large"></span><br>Auf NHN: <span id="current_measurements_sealevel_pressure"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xf72e</span>
+									</td>
+									<td>Windmittel:<br><span id="current_measurements_wind_speed" class="large"></span><br>Böen: <span id="current_measurements_wind_gust"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xf602</span>
+									</td>
+									<td>Windrichtung:<br><span id="current_measurements_wind_dir_str" class="large"></span><br><span id="current_measurements_wind_dir"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xe4f4</span>
+									</td>
+									<td>Tagesniederschlag:<br><span id="current_measurements_rain" class="large"></span><br>Letzte Stunde: <span id="current_measurements_rain_1h"></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xf75c</span>
+									</td>
+									<td>Niederschlagsintensität:<br><span id="current_measurements_rain_intensity" class="large"></span><br>Letzte Stunde: <span id="current_measurements_rain_intensity_max_1h"></span></span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xf744</span>
+									</td>
+									<td>Bewölkung:<br><span id="current_measurements_cloud" class="large"></span><br><span style="color: transparent;">-</span></td>
+								</tr>
+							</table>
+						</div>
+			
+						<div class="container">
+							<table>
+								<tr>
+									<td>
+										<span class="icon_r x-large icon_fixwidth">&#xe28f</span>
+									</td>
+									<td>Helligkeit:<br><span id="current_measurements_brightness" class="large"></span><br><span style="color: transparent;">-</span></td>
+									<!--<td>Solarstrahlung:<br><span id="current_measurements_solar" class="large"></span><br>Helligkeit: <span id="current_measurements_brightness"></span></td>-->
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			
+				<div class="content">
+					<button onclick="getWeatherCurrent(); officalWeatherWarnings(); weatherWarnings(); disable_popup = false;"><span class="icon_s">&#x21bb</span>  Aktualisieren</button>
+				</div>
 			</section>
 		</main>
-		
+
+		<flex></flex>
+
+		<footer style="background-image: url(images/backgrounds/default.svg);">
+			<table align="center" id="footer">
+				<tr>
+					<td style="padding-bottom: 10px;"> <img src="images/logo.svg" class="img_monocolor_white" style="width: 300px;"> </td>
+				</tr>
+				<tr>
+					<td>
+						© 2023					 - Es besteht keine Garantie auf Korrektheit der Daten.<br>Datum und Uhrzeit von Messwerten in CEST (Europe/Berlin, UTC +02:00).				</td>
+				</tr>
+			</table>
+			<hr>
+			<table align="center">
+				<tr>
+					<td><a class="button_transparent button_transparent_icon" onclick="cockieBanner(true);" style="font-size: 25px;"><span class='icon_s'>&#xf577</span></a></td>
+					<td><a class="button_transparent" href="/wetter/?page=impressum" title="Impressum und Datenschutzerklärung">Impressum/Datenschutzerklärung</a></td>
+				</tr>
+			</table>
+		</footer>
 	</body>
 </html>
