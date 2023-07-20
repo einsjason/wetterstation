@@ -422,6 +422,15 @@ section div {
 	box-shadow: 0 0 10px var(--shadow);
 }
 
+.content_container {
+	padding: 10px;
+	margin: 10px 15px;
+	border-radius: 15px;
+	background: var(--accent_bg);
+	color: var(--accent_color);
+	box-shadow: 0 0 10px var(--shadow);
+}
+
 .bg_image {
 	background-size: cover !important;
 	background-origin: padding-box !important;
