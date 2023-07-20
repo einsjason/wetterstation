@@ -25,7 +25,7 @@
 					<h1>Wetterstation Schönborn</h1>
 				</div>
 				
-				<div class="content">
+				<div class="content content_container bg_image" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
 					<h2>Wetter Aktuell</h2>
 
 					<div id="load_current">
@@ -36,9 +36,6 @@
 						<div class="loading"></div>
 						<span> Wetterwarnungen werden geladen...</span>
 					</div>
-				</div>
-				
-				<div class="content content_container bg_image" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
 					<div id="warnings"></div>
 					<br>
 					<div style="margin-left: 20px;">
@@ -172,9 +169,7 @@
 					</div>
 					<br>
 					<span class="large2"><span class="icon_r">&#xf766</span> <span id="sunrise"></span> | <span class="icon_r">&#xf767</span> <span id="sunset"></span></span>
-				</div>
-			
-				<div class="content">
+					<br>
 					<button onclick="getWeather(); getWeatherWarnings(); disable_popup = false;"><span class="icon_s">&#x21bb</span>  Aktualisieren</button>
 				</div>
 			</section>
