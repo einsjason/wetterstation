@@ -1,4 +1,4 @@
 # Wetterstation Schönborn
 Das ist meine Wetterstation in Schönborn bei Dresden.
 
-![Logo](images/logo.svg)
+<img src=images/logo.svg alt=Logo style="max-height: 100px;">
