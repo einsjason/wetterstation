@@ -7,7 +7,7 @@ Im 5 Minuten Intervall werden alle wichtigen Wetterdaten automatisch erfasst und
 
 ![Wetterstation](docs/images/station.jpg)
 
-Github-Webseite: [https://einsjason.github.io/wetter-schoenborn/](https://einsjason.github.io/wetter-scheonborn/)
+Github-Webseite: [https://einsjason.github.io/wetter-schoenborn/](https://einsjason.github.io/wetter-schoenborn/)
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
