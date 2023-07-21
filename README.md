@@ -1,5 +1,5 @@
 # Wetterstation Schönborn
-<img src=docs/images/logo.svg alt=Logo height=60>
+![Wetterstation](docs/images/logo.png)
 
 Die Wetterstation befindet sich in Schönborn im Dresdener Norden (Postleitzahl 01465) auf rund 235 m über Normalhöhennull (NHN).
 
