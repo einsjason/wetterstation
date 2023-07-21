@@ -5,7 +5,7 @@ Im 5 Minuten Intervall werden alle wichtigen Wetterdaten automatisch erfasst und
 
 <img src=docs/images/logo.svg alt=Logo height=100>
 
-Github-Webseite: [https://einsjason.github.io/wetter-schoenborn/](https://einsjason.github.io/wetter-schoenborn/)+
+Github-Webseite: [https://einsjason.github.io/wetter-schoenborn/](https://einsjason.github.io/wetter-schoenborn/)
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
