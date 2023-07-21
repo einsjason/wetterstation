@@ -34,7 +34,7 @@ async function getWeather() {
    
 	document.querySelector("#weather.content_container.bg_image").style.background = "url(https://rammer.org/cdn/images/weather/backgrounds/weather/" + data.data.weather_icon + ".jpg)";
 
-	Array.from(document.querySelectorAll(".content_container.bg_image mneasurement .container, .content_container.bg_image button")).forEach(e => {
+	Array.from(document.querySelectorAll(".content_container.bg_image #measurement .container, .content_container.bg_image button")).forEach(e => {
 		e.style.background = "var(--" + data.data.weather_icon + ")";
 	});
 
