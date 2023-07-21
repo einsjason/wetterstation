@@ -9,4 +9,6 @@ Github-Webseite: [https://einsjason.github.io/wetter-scheonborn/](https://einsja
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
+Weathercloud: [https://app.weathercloud.net/d8388569860](https://app.weathercloud.net/d8388569860)
+
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://paypal.me/einsjason)
