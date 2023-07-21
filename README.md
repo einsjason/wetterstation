@@ -5,6 +5,8 @@ Die Wetterstation befindet sich in Schönborn im Dresdener Norden (Postleitzahl 
 
 Im 5 Minuten Intervall werden alle wichtigen Wetterdaten automatisch erfasst und im Internet zur Verfügung gestellt.
 
+![Wetterstation](docs/images/station.jpg)
+
 Github-Webseite: [https://einsjason.github.io/wetter-scheonborn/](https://einsjason.github.io/wetter-scheonborn/)
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
