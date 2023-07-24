@@ -28,8 +28,6 @@
 				</div>
 				
 				<div class="content content_container bg_image" id="weather" style="background: url(https://rammer.org/cdn/images/weather/backgrounds/weather/null.jpg);">
-					<h2>Wetter Aktuell</h2>
-
 					<div id="load_current">
 						<div class="loading"></div>
 						<span> Wetterdaten werden geladen...</span>
@@ -173,8 +171,8 @@
 					<button onclick="getWeather(); getWeatherWarnings(); disable_popup = false;"><span class="icon_s">&#x21bb</span>  Aktualisieren</button>
 				</div>
 
-				<div class="content content_container bg_image" id="weather">
-					<img src="https://rammer.org/api/weather/radar.php" style="max-width: 100%;">
+				<div class="content" id="weather" style="text-align: center;">
+					<img id="radar" src="https://rammer.org/api/weather/radar.php" style="max-width: 100%; display: inline-block; margin: 0; border-radius: 15px; box-shadow: 0 0 10px var(--shadow);">
 				</div>
 			</section>
 		</main>
