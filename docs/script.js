@@ -80,7 +80,7 @@ async function getWeatherWarnings() {
 	let bg_images = await getDataText("https://rammer.org/api/weather/dwd_warnings.json")
 
 	try {
-		dwd_data = dwd_data.substring(dwd_data.indexOf("(") + 1, dwd_data.lastIndexOf(")"));
+		data_dwd = data_dwd.substring(data_dwd.indexOf("(") + 1, data_dwd.lastIndexOf(")"));
 		data_dwd = JSON.parse(data_dwd);
 		bg_images = JSON.parse(bg_images);
 
@@ -121,8 +121,6 @@ async function getWeatherWarnings() {
 		});
 	} catch(err) {
 		console.error(err);
-		document.getElementById("weather_warnings_load").style.display = "none";
-		return;
 	}
 
 	let data = await getDataText("https://rammer.org/api/weather/weatherwarnings.json");
@@ -141,8 +139,6 @@ async function getWeatherWarnings() {
 		});
 	} catch(err) {
 		console.error(err);
-		document.getElementById("weather_warnings_load").style.display = "none";
-		return;
 	}
 
 	document.getElementById("weather_warnings_load").style.display = "none";
