@@ -91,7 +91,7 @@ async function getWeatherWarnings() {
 				result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf05a</span></td>";
 				result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "<br>" + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
-					hour: '2-digi',
+					hour: '2-digit',
 					weekday: 'short'
 				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
@@ -111,7 +111,7 @@ async function getWeatherWarnings() {
 				result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
 				result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "<br>" + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
-					hour: '2-digi',
+					hour: '2-digit',
 					weekday: 'short'
 				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
