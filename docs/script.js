@@ -27,7 +27,8 @@ async function getWeather() {
 
 	try {
 		data = JSON.parse(data);
-	} catch {
+	} catch(err) {
+		console.error(err);
 		document.getElementById("load_current").style.display = "none";
 		return;
 	}
@@ -75,24 +76,74 @@ async function getWeatherWarnings() {
 	const dom = document.getElementById("warnings");
 	dom.innerHTML = "";
 
-	let data = await getDataText("https://rammer.org/api/weather/weatherwarnings.json");
+	let data_dwd = await getDataText("https://dwd.de/DWD/warnungen/warnapp/json/warnings.json");
+	let bg_images = await getDataText("https://rammer.org/api/weather/dwd_warnings.json")
 
 	try {
-		data = JSON.parse(data);
-	} catch {
+		dwd_data = dwd_data.substring(dwd_data.indexOf("(") + 1, dwd_data.lastIndexOf(")"));
+		data_dwd = JSON.parse(data_dwd);
+		bg_images = JSON.parse(bg_images);
+
+		data_dwd.vorabInformation[114612000].forEach(e => {
+			let result = "<div class='bg_image container' style='width: calc(100% - 50px); background: repeating-linear-gradient(45deg, transparent, transparent 8px, #ffffff3d 8px, #ffffff3d 10px),  url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + bg_images[e.event] + ".jpg'>";
+			result += "<table><tr>";
+			result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf05a</span></td>";
+			result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "<br>" + new Date(e.start).toLocaleTimeString("de-DE", {
+				minute: '2-digit',
+				hour: '2-digi',
+				weekday: 'short'
+			}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
+				minute: '2-digit',
+				hour: '2-digi',
+				weekday: 'short'
+			}) + "</td>";
+			result += "</tr></table>";
+
+			dom.innerHTML += result;
+		});
+
+		data_dwd.warnings[114612000].forEach(e => {
+			let result = "<div class='bg_image container' style='width: calc(100% - 50px); background: url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + bg_images[e.event] + ".jpg'>";
+			result += "<table><tr>";
+			result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
+			result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "<br>" + new Date(e.start).toLocaleTimeString("de-DE", {
+				minute: '2-digit',
+				hour: '2-digi',
+				weekday: 'short'
+			}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
+				minute: '2-digit',
+				hour: '2-digi',
+				weekday: 'short'
+			}) + "</td>";
+			result += "</tr></table>";
+
+			dom.innerHTML += result;
+		});
+	} catch(err) {
+		console.error(err);
 		document.getElementById("weather_warnings_load").style.display = "none";
 		return;
 	}
 
-	data.warnings.forEach(e => {
-		let result = "<div class='bg_image container' style='width: calc(100% - 50px); background: url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + e.icon + ".jpg'>";
-		result += "<table id='head'><tr>";
-		result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
-		result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "</td>";
-		result += "</tr></table>";
+	let data = await getDataText("https://rammer.org/api/weather/weatherwarnings.json");
 
-		dom.innerHTML += result;
-	});
+	try {
+		data = JSON.parse(data);
+
+		data.warnings.forEach(e => {
+			let result = "<div class='bg_image container' style='width: calc(100% - 50px); background: url(https://rammer.org/cdn/images/weather/backgrounds/warnings/" + e.icon + ".jpg'>";
+			result += "<table><tr>";
+			result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
+			result += "<td><b style='font-size: 110%;'>" + e.headline + "</b><br>" + e.description + "</td>";
+			result += "</tr></table>";
+
+			dom.innerHTML += result;
+		});
+	} catch(err) {
+		console.error(err);
+		document.getElementById("weather_warnings_load").style.display = "none";
+		return;
+	}
 
 	document.getElementById("weather_warnings_load").style.display = "none";
 }
