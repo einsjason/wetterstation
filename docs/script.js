@@ -95,7 +95,7 @@ async function getWeatherWarnings() {
 					weekday: 'short'
 				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
-					hour: '2-digi',
+					hour: '2-digit',
 					weekday: 'short'
 				}) + "</td>";
 				result += "</tr></table>";
@@ -115,7 +115,7 @@ async function getWeatherWarnings() {
 					weekday: 'short'
 				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
-					hour: '2-digi',
+					hour: '2-digit',
 					weekday: 'short'
 				}) + "</td>";
 				result += "</tr></table>";
