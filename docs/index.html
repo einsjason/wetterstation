@@ -169,8 +169,32 @@
 					</div>
 				</div>
 
-				<div class="content" id="weather" style="text-align: center;">
+				<div class="content" id="radar" style="text-align: center;">
 					<img id="radar" src="https://rammer.org/api/weather/radar.php" style="max-width: 100%; display: inline-block; margin: 0; border-radius: 15px; box-shadow: 0 0 10px var(--shadow);">
+				</div>
+
+				<div class="content content_container" id="astro">
+					<div class="container">
+						<table>
+							<tr>
+								<td>
+									<span class="icon_r x-large icon_fixwidth">&#xf766</span>
+								</td>
+								<td>Sonnenaufgang:<br><span id="astro_sunrise" class="large"></span><br>Beginn Dämmerung: <span id="astro_twilight_begin"></span></td>
+							</tr>
+						</table>
+					</div>
+			
+					<div class="container">
+						<table>
+							<tr>
+								<td>
+								<span class="icon_r x-large icon_fixwidth">&#xf767</span>
+								</td>
+								<td>Sonnenuntergang:<br><span id="astro_sunset" class="large"></span><br>Ende Dämmerung: <span id="astro_twilight_end"></span></td>
+							</tr>
+						</table>
+					</div>
 				</div>
 
 				<div class="content">

@@ -67,6 +67,25 @@ async function getWeather() {
 	document.getElementById("current_measurements_cloud").innerHTML = parseFloat(data.data.cloud).toFixed(0) + " %";
 	document.getElementById("current_measurements_brightness").innerHTML = parseFloat(data.data.brightness).toFixed(0) + " lux";
 
+	document.getElementById("astro_sunrise").innerHTML = new Date(data.astro.sunrise).toLocaleTimeString("de-DE", {
+		hour: "2-digit",
+		minute: "2-digit"
+	});
+	document.getElementById("astro_sunset").innerHTML = new Date(data.astro.sunset).toLocaleTimeString("de-DE", {
+		hour: "2-digit",
+		minute: "2-digit"
+	});
+	document.getElementById("astro_twilight_begin").innerHTML = new Date(data.astro.twilight_begin).toLocaleTimeString("de-DE", {
+		hour: "2-digit",
+		minute: "2-digit",
+		weekday: "short"
+	});
+	document.getElementById("astro_twilight_end").innerHTML = new Date(data.astro.twilight_end).toLocaleTimeString("de-DE", {
+		hour: "2-digit",
+		minute: "2-digit",
+		weekday: "short"
+	});
+
 	document.getElementById("load_current").style.display = "none";
 }
 
