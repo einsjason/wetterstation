@@ -11,6 +11,17 @@
 		<title>Wetterstation Schönborn</title>
 	</head>
 
+	<style>
+		#weather .container {
+			width: 290px;
+			backdrop-filter: blur(5px);
+		}
+
+		#astro .container {
+			width: 320px;
+		}
+	</style>
+
 	<body>
 		<header>
 			<a href="" title="Startseite"><img src="images/logo.png" height="35px"></a>
@@ -36,6 +47,7 @@
 						<div class="loading"></div>
 						<span> Wetterwarnungen werden geladen...</span>
 					</div>
+
 					<div id="warnings"></div>
 					<br>
 					<div style="margin-left: 20px;">
@@ -48,12 +60,6 @@
 			
 					<br>
 					<button id="measurementButton" onclick="switchMeasurements()"><span class="icon_s">&#xf107</span> Messwerte anzeigen</button>
-					<style>
-						.content .container {
-							width: 290px;
-							backdrop-filter: blur(5px);
-						}
-					</style>
 			
 					<div id="measurement" style="max-height: 0px; overflow: hidden; transition: all 1s;">
 						<br>
@@ -173,7 +179,7 @@
 					<img id="radar" src="https://rammer.org/api/weather/radar.php" style="max-width: 100%; display: inline-block; margin: 0; border-radius: 15px; box-shadow: 0 0 10px var(--shadow);">
 				</div>
 
-				<div class="content content_container" id="astro">
+				<div class="content" id="astro">
 					<div class="container">
 						<table>
 							<tr>
