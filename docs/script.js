@@ -93,7 +93,7 @@ async function getWeatherWarnings() {
 					minute: '2-digit',
 					hour: '2-digit',
 					weekday: 'short'
-				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
+				}) + " bis " + new Date(e.end).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
 					hour: '2-digit',
 					weekday: 'short'
@@ -113,7 +113,7 @@ async function getWeatherWarnings() {
 					minute: '2-digit',
 					hour: '2-digit',
 					weekday: 'short'
-				}) + " bis " + new Date(e.start).toLocaleTimeString("de-DE", {
+				}) + " bis " + new Date(e.end).toLocaleTimeString("de-DE", {
 					minute: '2-digit',
 					hour: '2-digit',
 					weekday: 'short'
