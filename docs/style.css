@@ -56,6 +56,7 @@
 
 	--accent: #2161a6;
 	--accent_transparent: #2161a671;
+	--accent_color: #202020;
 	--color: #000000;
 	--color_invert: #ffffff;
 
@@ -63,15 +64,17 @@
 	--header_bg: #ffffff;
 	--footer_bg: #506377;
 
-	--accent_bg: #ffffff;/*#f0f0f0;*/
+	--accent_bg: #ffffff;
 
 	--header_border: #42424230;
 	--shadow: #00000030;
+
+	--title_image: linear-gradient(to bottom, #fcfcfc00 50%, #fcfcfcfa 95%, var(--bg) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--accent_color: #a6a6a6;
+		--accent_color: #e6e6e6;
 		--color: #ffffff;
 		--color_invert: #000000;
 
@@ -79,9 +82,8 @@
 		--header_bg: #0b0b0b;
 		--footer_bg: #14191f;
 
-		--accent_bg: #0b0b0b; /*#141414;*/
+		--accent_bg: #0b0b0b;
 
-		--header_border: #42424230;
 		--shadow: #1a1a1a30;
 	}
 }
@@ -169,6 +171,16 @@
 }
 
 /**********************************************************************************************/
+
+.title_image {
+	height: 30vw;
+	min-height: 250px;
+	max-height: 400px;
+	text-align: center !important;
+	margin: 0 min(calc(0px - (100vw - 1200px) / 2), 0px);
+	transition: all 0.5s;
+	position: relative;
+}
 
 h1,
 h2,
