@@ -85,6 +85,8 @@
 		--accent_bg: #0b0b0b;
 
 		--shadow: #1a1a1a30;
+
+		--title_image: linear-gradient(to bottom, #0d0d0d00 50%, #0d0d0dfa 95%, var(--bg) 100%);
 	}
 }
 
