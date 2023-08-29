@@ -65,6 +65,7 @@ async function getWeather() {
 	document.getElementById("current_measurements_rain_intensity").innerHTML = parseFloat(data.data.rain_intensity).toFixed(2) + " mm/h";
 	document.getElementById("current_measurements_rain_intensity_max_1h").innerHTML = parseFloat(data.data.rain_intensity_max_1h).toFixed(2) + " mm/h";
 	document.getElementById("current_measurements_cloud").innerHTML = parseFloat(data.data.cloud).toFixed(0) + " %";
+	document.getElementById("current_measurements_irradiance").innerHTML = parseFloat(data.data.irradiance).toFixed(1) + " W/m²";
 	document.getElementById("current_measurements_brightness").innerHTML = parseFloat(data.data.brightness).toFixed(0) + " lux";
 
 	document.getElementById("astro_sunrise").innerHTML = new Date(data.astro.sunrise).toLocaleTimeString("de-DE", {
