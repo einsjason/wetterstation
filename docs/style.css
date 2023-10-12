@@ -61,15 +61,10 @@
 	--color_invert: #ffffff;
 
 	--bg: #fcfcfc;
-	--header_bg: #ffffff;
-	--footer_bg: #506377;
-
 	--accent_bg: #ffffff;
 
 	--header_border: #42424230;
 	--shadow: #00000030;
-
-	--title_image: linear-gradient(to bottom, #fcfcfc00 50%, #fcfcfcfa 95%, var(--bg) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,14 +74,9 @@
 		--color_invert: #000000;
 
 		--bg: #0d0d0d;
-		--header_bg: #0b0b0b;
-		--footer_bg: #14191f;
-
 		--accent_bg: #0b0b0b;
 
 		--shadow: #1a1a1a30;
-
-		--title_image: linear-gradient(to bottom, #0d0d0d00 50%, #0d0d0dfa 95%, var(--bg) 100%);
 	}
 }
 
@@ -253,12 +243,6 @@ body {
 	background-position: center center !important;
 }
 
-footer hr {
-	border: none;
-	border-top: 1px solid var(--color0) !important;
-	opacity: 0.6;
-}
-
 a,
 input,
 button {
@@ -292,13 +276,89 @@ a.noline {
 	text-decoration: none;
 }
 
-.bg_image a,
-footer a {
+.bg_image a {
 	color: inherit;
 }
 
 [onclick] {
 	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	color: var(--accent);
+	margin: 0;
+	cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+	font-size: 1.25em;
+	font-weight: bold;
+	font-family: icon_regular;
+}
+
+input[type="checkbox"]:checked::before {
+	content: "\f14a";
+}
+
+input[type="checkbox"].toggle:checked::before {
+	content: "\e5b1";
+}
+
+input[type="range"] {
+	appearance: none;
+	background: none;
+	height: 1em;
+	border-radius: 2px;
+	border: none;
+	margin: 0 5px -3px 5px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+input[type="range"]::-moz-range-thumb {
+	appearance: none;
+	border-radius: 50%;
+	border: none;
+	background: var(--accent);
+	width: 16px;
+	height: 16px;
+	transition: all 0.5s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	appearance: none;
+	border-radius: 50%;
+	border: none;
+	background: var(--accent);
+	width: 16px;
+	height: 16px;
+	margin-top: -6px;
+	transition: all 0.5s;
+}
+
+input[type="range"]::-moz-range-track {
+	background-color: var(--accent_transparent);
+	height: 4px;
+	border: none;
+	border-radius: 4px;
+	transition: all 0.5s;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background-color: var(--accent_transparent);
+	height: 4px;
+	border: none;
+	border-radius: 4px;
+	transition: all 0.5s;
+}
+
+input[type="range"]::-moz-range-progress {
+	background-color: var(--accent);
+	height: 4px;
+	border: none;
+	border-radius: 4px;
+	transition: all 0.5s;
 }
 
 img.img_monocolor_white {
@@ -323,9 +383,41 @@ button {
 	color: var(--color0);
 }
 
+.button_transparent {
+	color: var(--accent);
+	background: transparent;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 3px 6px;
+	border-radius: 15.5px;
+	display: inline-block;
+	font-weight: bold;
+	min-height: 25px;
+	line-height: 25px;
+	transition: all 0.5s !important;
+}
+
+.button_transparent_icon {
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: center;
+	width: 1em;
+}
+
+.button_transparent:hover {
+	background: var(--accent_transparent2);
+}
+
+.bg_image .button_transparent {
+	color: inherit;
+}
+
 [disabled] {
 	cursor: not-allowed;
-    cursor: not-allowed;
+	cursor: not-allowed;
 	filter: saturate(20%);
 }
 
@@ -336,54 +428,13 @@ table {
 	border-spacing: 5px;
 }
 
-footer table {
-	border-spacing: 0;
-}
-
 .content img {
 	display: block;
 	margin: 5px;
 }
 
-header img,
-footer img,
 .container img {
 	display: inline !important;
-}
-
-
-/**********************************************************************************************/
-
-header {
-	position: sticky;
-	top: 0px;
-	padding: 25px;
-	z-index: 2;
-	height: 35px;
-	box-shadow: 0px 0px 15px var(--shadow);
-	background: var(--header_bg);
-	color: var(--accent);
-	transition: all 0.5s;
-}
-
-footer {
-	padding: 30px;
-	text-align: center;
-	background-size: cover !important;
-	background-origin: padding-box !important;
-	background-attachment: scroll !important;
-	background-repeat: no-repeat !important;
-	background-position: center center !important;
-	background-color: var(--footer_bg);
-	color: var(--color0);
-	transition: all 0.5s;
-	box-shadow: 0px 0px 15px var(--shadow);
-}
-
-flex {
-	flex: 1;
-	transition: all 0.5s;
-	margin-bottom: 20px;
 }
 
 /**********************************************************************************************/
