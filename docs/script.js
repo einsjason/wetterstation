@@ -108,7 +108,7 @@ async function getWeatherWarnings() {
 		data_dwd.alerts.forEach(e => {
 			let result = "<div class='bg_image container' style='width: calc(100% - 50px); background: var(--warnlevel" + bg_images[e.event_de].level + ");'>";
 			result += "<table><tr>";
-			result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf05a</span></td>";
+			result += "<td><span class='icon_r icon_fixwidth x-large'>&#xf071</span></td>";
 			result += "<td><b style='font-size: 110%;'>" + e.headline_de + "</b><br>" + e.description_de + "<br>" + new Date(e.onset).toLocaleTimeString("de-DE", {
 				minute: '2-digit',
 				hour: '2-digit',
