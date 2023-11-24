@@ -6,203 +6,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="images/icon.png">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="https://rammer.org/_images/weather/backgrounds/weather/background-colors.css">
-	<link rel="stylesheet" type="text/css" href="https://rammer.org/_images/weather/backgrounds/warnings/background-colors.css">
 
 	<title>Wetterstation Schönborn</title>
 </head>
 
 <style>
-	#weather .container {
-		width: 290px;
-		backdrop-filter: blur(10px);
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
 	}
 
-	#astro .container {
-		width: 320px;
-	}
-
-	#weather #warnings div {
-		backdrop-filter: blur(10px);
+	iframe {
+		width: 100%;
+		height: 100%;
 	}
 </style>
 
 <body>
-	<main>
-		<section>
-			<div class="content content_container bg_image" id="weather" style="background: url(https://rammer.org/_images/weather/backgrounds/weather/null.jpg);">
-				<div id="load_current">
-					<div class="loading"></div>
-					<span> Wetterdaten werden geladen...</span>
-				</div>
-				<div id="weather_warnings_load">
-					<div class="loading"></div>
-					<span> Wetterwarnungen werden geladen...</span>
-				</div>
-
-				<div id="warnings"></div>
-				<br>
-				<div style="margin-left: 20px;">
-					<span><span class="icon_r">&#xf017</span> <span id="minutes_current"></span></span><br>
-
-					<span id="current_temp" class="x-large"></span> Gefühlte <span id="current_felt_temp"></span><br>
-					<span id="current_description" class="large2"></span><br>
-					<span id="current_wind_dir_icon" class="icon_s large2 icon_fixwidth" style="vertical-align: sub;">&#xf602</span> <span id="current_wind_description"></span></span>
-				</div>
-
-				<br>
-				<button id="measurementButton" onclick="switchMeasurements()"><span class="icon_s">&#xf107</span> Messwerte anzeigen</button>
-
-				<div id="measurement" style="max-height: 0px; overflow: hidden; transition: all 1s;">
-					<br>
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf2c9</span>
-								</td>
-								<td>Lufttemperatur:<br><span id="current_measurements_temp" class="large"></span><br>Min/Max: <span id="current_measurements_temp_min_max"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf750</span>
-								</td>
-								<td>Rel. Luftfeuchte:<br><span id="current_measurements_humidity" class="large"></span><br>Abs. Luftfeuchte: <span id="current_measurements_absolute_humidity"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf748</span>
-								</td>
-								<td>Taupunkt:<br><span id="current_measurements_dew_point" class="large"></span><br><span style="color: transparent;">-</span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf62a</span>
-								</td>
-								<td>Stationsluftdruck:<br><span id="current_measurements_pressure" class="large"></span><br>Auf NHN: <span id="current_measurements_sealevel_pressure"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf72e</span>
-								</td>
-								<td>Windmittel:<br><span id="current_measurements_wind_speed" class="large"></span><br>Böen: <span id="current_measurements_wind_gust"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf602</span>
-								</td>
-								<td>Windrichtung:<br><span id="current_measurements_wind_dir_str" class="large"></span><br><span id="current_measurements_wind_dir"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xe4f4</span>
-								</td>
-								<td>Tagesniederschlag:<br><span id="current_measurements_rain" class="large"></span><br>Letzte Stunde: <span id="current_measurements_rain_1h"></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf75c</span>
-								</td>
-								<td>Niederschlagsintensität:<br><span id="current_measurements_rain_intensity" class="large"></span><br>Letzte Stunde: <span id="current_measurements_rain_intensity_max_1h"></span></span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xf744</span>
-								</td>
-								<td>Bewölkung:<br><span id="current_measurements_cloud" class="large"></span><br><span style="color: transparent;">-</span></td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="container bg_image">
-						<table>
-							<tr>
-								<td>
-									<span class="icon_r x-large icon_fixwidth">&#xe28f</span>
-								</td>
-								<td>Solarstarhlung:<br><span id="current_measurements_irradiance" class="large"></span><br>Helligkeit: <span id="current_measurements_brightness"></span></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-
-			<div class="content" id="astro">
-				<div class="container">
-					<table>
-						<tr>
-							<td>
-								<span class="icon_r x-large icon_fixwidth">&#xf766</span>
-							</td>
-							<td>Sonnenaufgang:<br><span id="astro_sunrise" class="large"></span><br>Beginn Dämmerung: <span id="astro_twilight_begin"></span></td>
-						</tr>
-					</table>
-				</div>
-
-				<div class="container">
-					<table>
-						<tr>
-							<td>
-								<span class="icon_r x-large icon_fixwidth">&#xf767</span>
-							</td>
-							<td>Sonnenuntergang:<br><span id="astro_sunset" class="large"></span><br>Ende Dämmerung: <span id="astro_twilight_end"></span></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-
-			<div class="content">
-				<button onclick="getWeather(); getWeatherWarnings(); getWeatherForecast();"><span class="icon_s">&#x21bb</span> Aktualisieren</button>
-			</div>
-		</section>
-	</main>
+	<iframe src="https://rammer.org/wetter/?page=current&app"></iframe>
 </body>
-
-<script src="script.js"></script>
-<script>
-	getWeather();
-	getWeatherWarnings();
-</script>
 
 </html>
