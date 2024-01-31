@@ -23,15 +23,33 @@
 		margin: 0;
 	}
 
+	nav {
+		height: 30px;
+		border-bottom: 1px solid currentColor;
+	}
+
 	iframe {
 		width: 100%;
-		height: 100%;
+		height: calc(100% - 30px);
 		border: none;
 	}
 </style>
 
 <body>
-	<iframe src="https://rammer.org/wetter/?page=current&embed"></iframe>
+	<nav>
+		<button onclick="setPage('current')">Aktuelles Wetter</button>
+		<button onclick="setPage('api')">API Dokumentation</button>
+		<button onclick="setPage('about')">Über die Wetterstation</button>
+	</nav>
+	<iframe></iframe>
 </body>
+
+<script>
+	function setPage(page) {
+		document.querySelector("iframe").setAttribute("src", "https://rammer.org/wetter/?page=" + page + "&embed");
+	}
+
+	setPage("current");
+</script>
 
 </html>
