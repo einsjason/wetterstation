@@ -5,6 +5,8 @@ Die Wetterstation befindet sich in Schönborn im Dresdener Norden (Postleitzahl 
 
 Im 5 Minuten Intervall werden alle wichtigen Wetterdaten automatisch erfasst und im Internet zur Verfügung gestellt.
 
+Der Quelltext ist auf der Webseite unter "Über die Station" zu finden.
+
 <img src='images/station_top.jpg' width='600'>
 <img src='images/station_top_2.jpg' height='600'>
 <img src='images/station_ground.jpg' height='600'>
