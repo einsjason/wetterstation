@@ -13,7 +13,7 @@ Der Quelltext ist auf der Webseite unter "Über die Station" zu finden.
 <img src='images/controller.jpg' width='600'>
 <img src='images/controller_2.jpg' width='600'>
 
-Github-Webseite: [https://einsjason.github.io/wetterstation-schoenborn/](https://einsjason.github.io/wetterstation/)
+Github-Webseite: [https://einsjason.github.io/wetterstation/](https://einsjason.github.io/wetterstation/)
 
 Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
