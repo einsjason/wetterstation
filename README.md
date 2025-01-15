@@ -13,10 +13,9 @@ Der Quelltext ist auf der Webseite unter "Über die Station" zu finden.
 <img src='images/controller.jpg' width='600'>
 <img src='images/controller_2.jpg' width='600'>
 
-Github-Webseite: [https://einsjason.github.io/wetterstation/](https://einsjason.github.io/wetterstation/)
-
-Haupt-Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
+Webseite: [https://wetter.rammer.org](https://wetter.rammer.org)
 
 Weathercloud: [https://app.weathercloud.net/d8388569860](https://app.weathercloud.net/d8388569860)
+Weather Underground: [https://www.wunderground.com/dashboard/pws/IDRESD482](https://www.wunderground.com/dashboard/pws/IDRESD482)
 
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://paypal.me/einsjason)
