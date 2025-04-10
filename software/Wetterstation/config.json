@@ -1,0 +1,105 @@
+{
+	"i2c": {
+		"bme280": {
+			"addr": "0x77"
+		},
+		"lps35hw": {
+			"addr": "0x5d"
+		},
+		"sht31d": {
+			"addr": "0x44"
+		},
+		"mlx90614": {
+			"addr": "0x5a"
+		},
+		"ads1015": {
+			"addr": "0x48"
+		},
+		"tlv493d": {
+			"addr": "0x5e",
+			"fallback_addr": "0x1f"
+		},
+		"tsl2591": {
+			"addr": "0x29"
+		},
+		"24lc32": {
+			"addr": "0x50"
+		},
+		"pmsa003i": {
+			"addr": "0x12"
+		}
+	},
+	"i2c_bus": 1,
+	"gpio": {
+		"anemometer": 17,
+		"pluviometer": 27,
+		"drop_sensor": 22,
+		"fan": 24,
+		"fan_air_sensor": 25
+	},
+	"analog_gpio": {
+		"housing_temp": 0
+	},
+	"stationinfo": {
+		"lat": 0,
+		"lon": 0,
+		"alt": 0,
+		"warncell_id": [
+			0,
+			0
+		],
+		"name": "Außen"
+	},
+	"output": {
+		"local": "/var/www/html/data/",
+		"remote": "***",
+		"num_daily": 28,
+		"num_hourly": 72
+	},
+	"eeprom_addr": {
+		"time": 0,
+		"reset": 1,
+		"reset_hour": 2,
+		"t_min": 3,
+		"t_max": 4,
+		"rain": 5,
+		"rain_1h": 6,
+		"rain_i_max_1h": 7,
+		"pressure_1h": 8,
+		"pressure_2h": 9,
+		"pressure_3h": 10,
+		"pressure_0h": 11,
+		"wind_s_max_1d": 12,
+		"wind_g_max_1d": 13,
+		"wind_s_max_1h": 14,
+		"wind_g_max_1h": 15,
+		"pm1_24h_avg": 16,
+		"pm2_5_24h_avg": 17,
+		"pm10_24h_avg": 18,
+		"pm1_24h_avg_count": 22,
+		"pm2_5_24h_avg_count": 23,
+		"pm10_24h_avg_count": 24,
+		"sunshine_1h": 25,
+		"sunshine_1d": 26,
+		"wind_s_avg_1d": 27,
+		"sunshine_interval_start": 28
+	},
+	"calibration": {
+		"tlv493d_max_magnetic": 1.6,
+		"interrupt_timeout_anemometer": 10,
+		"interrupt_timeout_pluviometer": 10,
+		"interrupt_timeout_drop_sensor": 10,
+		"val_per_pulse_anemometer": 0.2136,
+		"val_per_pulse_pluviometer": 0.19,
+		"pluviometer_reset_time": 600000.0,
+		"tsl2591_housing_correction_factor": 3.4,
+		"sht31d_heater": {
+			"value": 80,
+			"cooldown": 2
+		},
+		"sunshine_threshold_factor": 0.75
+	},
+	"fan": {
+		"housing_temp": 25
+	}
+}
