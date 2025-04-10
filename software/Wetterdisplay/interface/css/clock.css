@@ -1,0 +1,53 @@
+#clock_container {
+	width: 300px;
+	height: 300px;
+	position: relative;
+	border-radius: 50%;
+}
+
+#time_container {
+	padding: 10px;
+	border-radius: 15px;
+}
+
+#clock_container #hand-hour {
+	right: calc(50% - 5px);
+	bottom: calc(50% - 5px);
+	transform-origin: 50% calc(100% - 5px);
+	height: 30%;
+	position: absolute;
+	width: 10px;
+	background: currentColor;
+	border-radius: 5px;
+}
+
+#clock_container #hand-minute {
+	right: calc(50% - 3px);
+	bottom: calc(50% - 3px);
+	transform-origin: 50% calc(100% - 3px);
+	height: 40%;
+	position: absolute;
+	width: 6px;
+	background: currentColor;
+	border-radius: 3px;
+}
+
+#clock_container #hand-second {
+	right: calc(50% - 1px);
+	bottom: calc(50% - 15px);
+	transform-origin: 50% calc(100% - 15px);
+	height: 50%;
+	position: absolute;
+	width: 2px;
+	background: var(--bg1);
+}
+
+#clock_container #center {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background: var(--bg1);
+	border-radius: 50%;
+	top: calc(50% - 3px);
+	left: calc(50% - 3px);
+}

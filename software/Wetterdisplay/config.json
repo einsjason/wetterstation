@@ -1,0 +1,26 @@
+{
+	"http": {
+		"port": 8080,
+		"only_localhost" : true
+	},
+	"stationinfo": {
+		"lat": 0,
+		"lon": 0,
+		"fallback_tz": "Europe/Berlin"
+	},
+	"map_zoom": 9,
+	"radar_distance": 62,
+	"data_sources": {
+		"bing_url": "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=de-DE",
+		"bing_base_url": "https://www.bing.com",
+		"osm_url": "https://tile.openstreetmap.org/",
+		"weather_url": {
+			"outside": "xxx",
+			"inside": "xxx",
+			"inside2": "xxx"
+		},
+		"weatherwarnings_url": "https://api.brightsky.dev/alerts",
+		"weatherforecast_url": "https://api.brightsky.dev/weather",
+		"weatherradar_url": "https://api.brightsky.dev/radar"
+	}
+}
