@@ -11,7 +11,7 @@ from utils.timezone_linux import *
 from server import *
 
 SOFTWARE_INFO = {
-	"version": "250410"
+	"version": "250410-BUGFIX"
 }
 
 # #############################################################
@@ -53,11 +53,6 @@ if "/" not in tz and " " in tz:
 config["cache"]['timezone'] = tz
 
 config["cache"]["map_info"] = getMapInfo(config["map_zoom"], config["stationinfo"]["lat"], config["stationinfo"]["lon"])
-
-lights = {
-	"nanoleafs": [],
-	"lights": []
-}
 
 webserver = WebServer(config["http"]["port"], config["http"]["only_localhost"], "/interface", config)
 

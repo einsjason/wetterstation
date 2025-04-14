@@ -110,12 +110,16 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
 					n = 0
 
 				try:
+					t = (time.time() // 300) * 300
+					tstring = time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(t))
+					tstring = f"{tstring[:-2]}:{tstring[-2:]}"
 					data = getResource(config["data_sources"]["weatherradar_url"]
 						+ "?tz=" + config["cache"]["timezone"]
 						+ "&lat=" + str(config["stationinfo"]["lat"])
 						+ "&lon=" + str(config["stationinfo"]["lon"])
 						+ "&distance=" + str(config["radar_distance"] * 1000)
-						+ "&format=plain")
+						+ "&format=plain"
+						+ "&date=" + tstring)
 					data = json.loads(data)['radar']
 
 					if n >= 0 and n < len(data):
@@ -152,12 +156,16 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
 
 			elif request_path == "/api/radar_forecast": # Radarvorhersage
 				try:
+					t = (time.time() // 300) * 300
+					tstring = time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(t))
+					tstring = f"{tstring[:-2]}:{tstring[-2:]}"
 					data = getResource(config["data_sources"]["weatherradar_url"]
 						+ "?tz=" + config["cache"]["timezone"]
 						+ "&lat=" + str(config["stationinfo"]["lat"])
 						+ "&lon=" + str(config["stationinfo"]["lon"])
 						+ "&distance=1"
-						+ "&format=plain")
+						+ "&format=plain"
+						+ "&date=" + tstring)
 					data = json.loads(data)['radar']
 					data_res = []
 					for d in data:
