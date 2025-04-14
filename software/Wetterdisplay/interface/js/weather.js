@@ -441,7 +441,7 @@ async function getRadar() { //Radar
 			let data = await fetchData("/api/radar_forecast");
 			data = JSON.parse(data);
 			data.forEach((e, i) => {
-				if(i % 2 == 0) {
+				if(i % 2 == 0 && i < 24) {
 					let ind = parseInt(i / 2);
 					let val = (i < data.length - 1 ? e.value : ((e.value / 12) + (data[i + 1].value / 12)) * 6); //Addiere 5 min Werte zu 10 min Werte
 					drop[ind].style.background = "var(--rain" + precipitationLevel(val) + ")";
